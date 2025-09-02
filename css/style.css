@@ -1,0 +1,72 @@
+@import url('./colors.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary);
+}
+
+
+.logo {
+    width: 80px;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.btn-action {
+    border: 2px solid var(--white);
+    color: var(--white);
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: .5s all;
+}
+
+.btn-action:hover {
+    background-color: var(--white);
+    color: var(--secondary);
+}
+
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    transition: .5s all;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 5px;
+}
+
+.nav-item:hover {
+    color: var(--secondary);
+}
+
+.mobile-menu {
+    display: none !important; 
+}
+
+.mobile-menu .nav-item {
+    display: none !important;       
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block !important; 
+    }
+
+    .desktop-menu {
+        display: none !important; 
+    }
+}

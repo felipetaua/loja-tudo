@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Tudô - Variedades e Celulares em Nova Londrina</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        /* Estilização padrão fornecida pelo usuário com cores primárias */
+        :root {
+            --color-primary: #554AF0; /* Azul */
+            --color-secondary: #FF5454; /* Vermelho */
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f8f9fa;
+        }
+        
+        /* Classes personalizadas para usar as cores primárias com Tailwind */
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-secondary { color: var(--color-secondary); }
+        .border-secondary { border-color: var(--color-secondary); }
+
+        .btn-whatsapp {
+            background-color: var(--color-secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Garante que o iframe do mapa seja responsivo */
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .map-container {
+            position: relative;
+            padding-bottom: 75%; /* Proporção 4:3 */
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-primary">Tudô</h1>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#produtos" class="text-gray-600 hover:text-primary transition">Produtos</a>
+                <a href="#loja-virtual" class="text-gray-600 hover:text-primary transition">Loja Virtual</a>
+                <a href="#localizacao" class="text-gray-600 hover:text-primary transition">Onde Estamos</a>
+                <a href="#sobre" class="text-gray-600 hover:text-primary transition">Sobre</a>
+
+            </nav>
+            <a href="https://wa.me/5544000000000" target="_blank" class="hidden md:flex items-center gap-2 text-white font-bold py-2 px-5 rounded-full btn-whatsapp">
+                <i class="ph ph-whatsapp-logo text-2xl"></i>
+                <span>WhatsApp</span>
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-primary">
+                <i class="ph ph-list text-3xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#produtos" class="block py-2 text-gray-600 hover:text-primary">Produtos</a>
+            <a href="#loja-virtual" class="block py-2 text-gray-600 hover:text-primary">Loja Virtual</a>
+            <a href="#localizacao" class="block py-2 text-gray-600 hover:text-primary">Onde Estamos</a>
+            <a href="#localizacao" class="block py-2 text-gray-600 hover:text-primary">Sobre</a>
+            <a href="https://wa.me/5544000000000" target="_blank" class="mt-4 flex items-center justify-center gap-2 text-white font-bold py-3 px-5 rounded-full btn-whatsapp">
+                <i class="ph ph-whatsapp-logo text-2xl"></i>
+                <span>Fale no WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-primary text-white text-center py-20 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-4 fade-in">Tudo que você precisa.</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-6 fade-in" style="animation-delay: 0.2s;">🛍️ Variedades, celulares e manutenção em um só lugar.</p>
+                <p class="text-md md:text-lg opacity-80 fade-in" style="animation-delay: 0.4s;">✨ Em breve, a maior variedade de Nova Londrina, aqui!</p>
+            </div>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section id="produtos" class="py-20 px-6">
+            <div class="container mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-12">Nossos Destaques</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Produto 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/554AF0/FFFFFF?text=Celular+Moderno" alt="Celular em destaque" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">Smartphone X Pro</h4>
+                            <p class="text-gray-600 mb-4">Câmera de 108MP e tela AMOLED.</p>
+                            <span class="text-2xl font-bold text-primary">R$ 1.999,00</span>
+                        </div>
+                    </div>
+                    <!-- Produto 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/FF5454/FFFFFF?text=Fone+Bluetooth" alt="Fone de ouvido bluetooth" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">Fone TWS AirSound</h4>
+                            <p class="text-gray-600 mb-4">Cancelamento de ruído e 24h de bateria.</p>
+                            <span class="text-2xl font-bold text-primary">R$ 249,90</span>
+                        </div>
+                    </div>
+                    <!-- Produto 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/554AF0/FFFFFF?text=Smartwatch" alt="Relógio inteligente" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">Smartwatch Fit+</h4>
+                            <p class="text-gray-600 mb-4">Monitore sua saúde e atividades físicas.</p>
+                            <span class="text-2xl font-bold text-primary">R$ 499,00</span>
+                        </div>
+                    </div>
+                    <!-- Produto 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/FF5454/FFFFFF?text=Acessório+Gamer" alt="Acessório gamer" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">Teclado Mecânico RGB</h4>
+                            <p class="text-gray-600 mb-4">Alta performance para seus jogos.</p>
+                            <span class="text-2xl font-bold text-primary">R$ 350,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão Loja Virtual -->
+        <section id="loja-virtual" class="bg-gray-100 py-20 px-6">
+            <div class="container mx-auto text-center">
+                <i class="ph ph-shopping-cart-simple text-6xl text-secondary"></i>
+                <h3 class="text-4xl font-bold mt-4 mb-4">Explore nossa Loja Virtual</h3>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Toda a nossa variedade de produtos a um clique de distância. Compre online e receba em casa com total segurança.</p>
+                <a href="#" class="inline-block text-white font-bold py-4 px-10 rounded-full text-lg btn-whatsapp">
+                    Acessar a Loja Online
+                </a>
+            </div>
+        </section>
+
+        <!-- Localização -->
+        <section id="localizacao" class="py-20 px-6">
+            <div class="container mx-auto">
+                <h3 class="text-4xl font-bold text-center mb-12">Visite nossa loja física</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <h4 class="text-2xl font-semibold mb-4 text-primary">Loja Tudô | Nova Londrina</h4>
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-3">
+                            <i class="ph ph-map-pin text-2xl text-secondary"></i>
+                            <p class="text-lg">Av. Brasil, 123 - Centro<br>Nova Londrina - PR, 87970-000</p>
+                        </div>
+                         <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                            <i class="ph ph-clock text-2xl text-secondary"></i>
+                            <p class="text-lg">Seg a Sáb: 08:00 às 18:00</p>
+                        </div>
+                        <p class="text-gray-600">📲 WhatsApp, catálogo, localização? Você está no lugar certo!</p>
+                    </div>
+                    <div class="map-container rounded-lg shadow-xl overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14694.75773130833!2d-53.2425!3d-22.7663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x948d7a46f6b5c2c7%3A0x62a1f0a28a38521a!2sNova%20Londrina%2C%20PR%2C%2087970-000!5e0!3m2!1spt-BR!2sbr!4v1662581622321!5m2!1spt-BR!2sbr" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-10 px-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Loja Tudô. Todos os direitos reservados.</p>
+            <p class="text-sm opacity-70 mt-2">Feito com ♥ em Nova Londrina</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica para o menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
