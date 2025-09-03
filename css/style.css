@@ -53,20 +53,42 @@
     color: var(--secondary);
 }
 
-.mobile-menu {
-    display: none !important; 
+.mobile-menu, .mobile-menu-icon {
+    display: none ; 
+}
+
+.mobile-menu-icon {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--white);
 }
 
 .mobile-menu .nav-item {
-    display: none !important;       
+    display: block; 
+    text-align: center; 
+    padding: 12px 0; 
 }
 
 @media (max-width: 768px) {
-    .mobile-menu {
-        display: block !important; 
+    .desktop-menu {
+        display: none ; 
     }
 
-    .desktop-menu {
-        display: none !important; 
+    .header #btn-desktop {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    #btn-mobile {
+        display: none;
+    }
+
+    .header {
+        padding: 10px 20px;
     }
 }
