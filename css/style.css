@@ -7,6 +7,7 @@
     font-family: var(--font-sans);
 }
 
+/* Header de navegação */
 .header {
     display: flex;
     justify-content: space-between;
@@ -96,6 +97,77 @@
     text-align: center; 
     padding: 12px 0; 
 }
+
+/* herosection */
+
+.herosection {
+    display: flex;
+}
+
+.hero-title {
+    display: inline;
+    width: 100%;
+    font-size: 4.5rem;
+    color: var(--black);
+}
+
+.hero-header {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero-header i {
+    font-size: 3rem;
+}
+
+.hero-content {
+    padding: 0 40px 0 6%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero-description {
+    font-size: 1rem;
+}
+
+.hero-ilustration {
+    width: 55%;
+}
+
+.hero-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 25px 0;
+}
+.hero-subtitle {
+    display: block;
+}
+
+.btn-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 16px;
+}
+
+.hero-arrow {
+    display: block;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+
 
 @media (max-width: 768px) {
     .desktop-menu {
