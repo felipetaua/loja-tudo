@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const hamburgerIcon = hamburgerBtn.querySelector('i'); // Pega o elemento <i> dentro do botão
+    const hamburgerIcon = hamburgerBtn.querySelector('i'); 
 
     hamburgerBtn.addEventListener('click', () => {
         // Adiciona ou remove a classe 'open' do menu
