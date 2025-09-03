@@ -7,6 +7,8 @@
   --popover-foreground: oklch(0.1450 0 0);
   --primary: oklch(0.5305 0.2378 277.4842);
   --secondary: oklch(0.6810 0.2074 24.5066);
+  --secondary-accent: oklch(66.066% 0.22581 25.939);
+
   --white: #ffffff;
   --black: #000000;
 
