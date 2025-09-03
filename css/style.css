@@ -98,9 +98,9 @@
     padding: 12px 0; 
 }
 
-/* herosection */
+/* hero-section */
 
-.herosection {
+.hero-section {
     display: flex;
 }
 
@@ -237,8 +237,31 @@
     height: auto;
 }
 
+/* Sessão de produtos */
+
+.wrapper-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+    flex-wrap: wrap; 
+    margin-top: 3rem; 
+}
+
+.linha-vertical-card {
+    width: 1px; 
+    height: 100px; 
+    background-color: #dddddd; 
+}
+
+.wrapper-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 975px) {
-    .herosection {
+    .hero-section {
         flex-direction: column; 
         align-items: center;
         gap: 40px;
