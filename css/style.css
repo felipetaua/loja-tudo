@@ -107,8 +107,12 @@
 .hero-title {
     display: inline;
     width: 100%;
-    font-size: 4.5rem;
+    font-size: clamp(2rem, 1rem + 4vw, 4rem); 
     color: var(--black);
+}
+
+.hero-title span {
+    color: var(--secondary);
 }
 
 .hero-header {
@@ -117,7 +121,7 @@
 }
 
 .hero-header i {
-    font-size: 3rem;
+    font-size: clamp(2rem, 1rem + 3vw, 3rem); 
 }
 
 .hero-content {
@@ -130,7 +134,7 @@
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 0.6rem + 1vw, 1.3rem); 
 }
 
 .hero-ilustration {
