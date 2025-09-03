@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    position: relative; 
+    padding: 10px 20px;
+    position: relative;
     background-color: var(--primary);
 }
 
@@ -58,7 +58,7 @@
     display: none ; 
 }
 
-.mobile-menu.open {
+.mobile-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +68,19 @@
     left: 0;
     width: 100%;
     padding-bottom: 20px;
-    z-index: 1000; 
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    pointer-events: none; 
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .mobile-menu-icon {
