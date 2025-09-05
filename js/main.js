@@ -12,4 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerIcon.classList.toggle('fa-bars', !isOpen);
         hamburgerIcon.classList.toggle('fa-xmark', isOpen);
     });
+
+    // Lógica para os botões de scroll dos produtos
+    const prevScrollBtn = document.getElementById('prev-scroll-btn');
+    const nextScrollBtn = document.getElementById('next-scroll-btn');
+    const productsScroll = document.querySelector('.products-scroll');
+
+    if (prevScrollBtn && nextScrollBtn && productsScroll) {
+        const getScrollAmount = () => {
+            const firstItem = productsScroll.querySelector('.product-item');
+            if (!firstItem) return 0;
+
+            const itemWidth = firstItem.offsetWidth;
+            const itemGap = parseInt(window.getComputedStyle(productsScroll).gap) || 20;
+            return itemWidth + itemGap;
+        }
+        const scrollAmount = getScrollAmount();
+
+        nextScrollBtn.addEventListener('click', () => {
+            productsScroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevScrollBtn.addEventListener('click', () => {
+            productsScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
 });

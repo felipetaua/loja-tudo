@@ -339,6 +339,10 @@
     background-repeat: no-repeat;
     border-radius: 16px;
     text-decoration: none;
+
+    /* Alinha o item ao centro do container durante o snap */
+    scroll-snap-align: center;
+    flex-shrink: 0; /* Impede que os itens encolham */
 }
 
 .product-1 {
@@ -373,6 +377,38 @@
     margin: 10px;
 }
 
+.products-scroll-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    color: var(--primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
 .products-scroll::-webkit-scrollbar {
     height: 8px;
 }
@@ -390,6 +426,14 @@
 
 .products-scroll::-webkit-scrollbar-thumb:hover {
     background-color: var(--primary); 
+}
+
+.scroll-btn:first-of-type {
+    left: -20px;
+}
+
+.scroll-btn:last-of-type {
+    right: -20px;
 }
 
 
