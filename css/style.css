@@ -468,3 +468,19 @@
         transform:rotate(90deg);
     }
 }
+
+
+@media (max-width: 575px) {
+    .wrapper-cards {
+        flex-direction: column;
+        gap: 1.8rem; 
+    }
+
+    .card-box {
+        width: 100%;
+    }
+
+    .linha-vertical-card  {
+        display: none;
+    }
+}
