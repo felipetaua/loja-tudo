@@ -448,6 +448,19 @@ main {
     right: -20px;
 }
 
+.parent-products {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 15px;
+}
+
+.banner-1 { grid-area: 1 / 1 / 3 / 3; }
+.banner-2 { grid-area: 2 / 3 / 3 / 5; }
+.banner-3 { grid-area: 1 / 3 / 2 / 4; }
+.banner-4 { grid-area: 1 / 4 / 2 / 5; }
+
 
 /* sessão localização */
 
@@ -622,7 +635,7 @@ main {
 	animation: flipdown 0.5s ease both;
 }
 .no-select, .title-accordion {
-	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent-products;
 	-webkit-touch-callout: none;
 	user-select: none;
 }
