@@ -492,6 +492,16 @@
 
 /* sessão sobre */
 
+.sobre-section {
+    padding: 80px 6%;
+}
+
+.wrapper-sobre {
+    display: flex;
+    align-items: center;
+
+}
+
 .accordion-menu {
     width: 50%;
 	margin: 150px 0;
@@ -626,6 +636,7 @@
 .about-image {
     width: 50%;
 }
+
 
 /* medias */
 
