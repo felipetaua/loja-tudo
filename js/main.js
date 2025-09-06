@@ -37,4 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
             productsScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });
     }
+
+    // Lógica para o botão "Voltar ao Topo"
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+    }
 });
