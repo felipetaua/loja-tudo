@@ -11,14 +11,22 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header de navegação */
+main {
+    padding-top: 85px; 
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    position: relative;
+    padding: 0 6%; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
     background-color: var(--primary);
+    box-shadow: var(--shadow-md); 
 }
 
 
@@ -772,7 +780,7 @@ html {
     }
 
     .header {
-        padding: 10px 20px;
+        padding: 0 20px;
     }
     .hero-arrow {
         margin: 20px 0;
