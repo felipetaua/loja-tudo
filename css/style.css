@@ -583,6 +583,122 @@
 }
 
 
+/* Footer */
+.footer-light {
+    background-color: #f8f9fa;
+    color: #495057;
+    padding: 60px 6% 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col .logo {
+    width: 80px;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e9ecef;
+    color: var(--primary);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.footer-col-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #495057;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-contact i {
+    margin-top: 5px;
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .footer-contact li {
+        justify-content: center;
+        text-align: left;
+    }
+}
+
 @media (max-width: 575px) {
     .wrapper-cards {
         flex-direction: column;
