@@ -38,16 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica para o botão "Voltar ao Topo"
     const backToTopBtn = document.getElementById('back-to-top-btn');
+    const header = document.querySelector('.header');
 
-    if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
+    // Otimização: Usar um único event listener para o scroll
+    window.addEventListener('scroll', () => {
+        // Lógica do header
+        if (header) {
+            if (window.scrollY > 50) { // Adiciona a classe quando o scroll passar de 50px
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Lógica do botão "Voltar ao Topo"
+        if (backToTopBtn) {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
             } else {
                 backToTopBtn.classList.remove('show');
             }
-        });
-    }
+        }
+    });
 });
