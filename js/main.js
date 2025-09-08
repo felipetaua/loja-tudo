@@ -41,18 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('back-to-top-btn');
     const header = document.querySelector('.header');
 
-    // Otimização: Usar um único event listener para o scroll
     window.addEventListener('scroll', () => {
-        // Lógica do header
         if (header) {
-            if (window.scrollY > 50) { // Adiciona a classe quando o scroll passar de 50px
+            if (window.scrollY > 50) { 
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         }
 
-        // Lógica do botão "Voltar ao Topo"
         if (backToTopBtn) {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
