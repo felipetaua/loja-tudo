@@ -738,7 +738,7 @@ main {
     color: var(--secondary);
 }
 
-/* sessão loja virtual */
+/* TUDO: sessão loja virtual */
 .loja-virtual-section {
     padding: 80px 6%;
 }
@@ -1361,5 +1361,14 @@ main {
     }
     .countdown-label {
         font-size: 0.7rem;
+    }
+
+    .wrapper-loja {
+        flex-direction: column;
+        gap: 1.8rem; 
+    }
+
+    .loja-content {
+        width: 100%;
     }
 }
