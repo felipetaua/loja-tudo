@@ -270,7 +270,103 @@ main {
     height: auto;
 }
 
+
+/* Sessão Lançamento */
+
+.lancamento-section {
+    position: relative; 
+    padding: 80px 6%;
+    background: linear-gradient(160deg, #fdfdff 0%, #ffe6e6 100%); 
+    text-align: center;
+    overflow: hidden;
+}
+
+.lancamento-section::before,
+.lancamento-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.lancamento-section::before {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+    background: radial-gradient(circle, rgba(255, 84, 84, 0.1), transparent 70%);
+}
+
+.lancamento-section::after {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    right: -80px;
+    background: radial-gradient(circle, rgba(85, 74, 240, 0.1), transparent 70%);
+}
+
+.lancamento-title {
+    font-size: clamp(2rem, 1rem + 3vw, 3.5rem);
+    color: var(--black-80);
+    margin-bottom: 1rem;
+    font-weight: 700; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+.lancamento-description {
+    font-size: clamp(0.9rem, 0.7rem + 1vw, 1.2rem);
+    color: var(--black-90);
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative; 
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 16px; 
+    box-shadow: var(--shadow-lg);
+    width: 120px;
+    height: 120px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.countdown-number {
+    font-size: clamp(2.5rem, 1.5rem + 4vw, 3.5rem);
+    font-weight: bold;
+    color: var(--secondary);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: clamp(0.8rem, 0.6rem + 1vw, 1rem);
+    color: var(--black);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
 /* Sessão de produtos */
+
 .product-section {
     padding: 80px 6%;
 }
@@ -1251,5 +1347,19 @@ main {
     .banner-1, .banner-3, .banner-4 {
         height: 300px;
         margin-bottom: 50px;
+    }
+
+    .countdown-container {
+        gap: 1rem;
+    }
+    .countdown-item {
+        width: 80px;
+        height: 80px;
+    }
+    .countdown-number {
+        font-size: 2rem;
+    }
+    .countdown-label {
+        font-size: 0.7rem;
     }
 }
