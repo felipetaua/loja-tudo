@@ -58,4 +58,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    
+    // cronometro de lançamento
+    const countdown = () => {
+        const launchDate = new Date('2025-09-20T09:00:00').getTime();
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance < 0) {
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                countdownElement.innerHTML = "<h3 class='lancamento-title' style='font-size: 1.5rem; margin-top: 1rem;'>Já inauguramos! Venha nos visitar!</h3>";
+            }
+            clearInterval(countdownInterval);
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = String(days).padStart(2, '0');
+        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    };
+
+    if (document.getElementById('countdown')) {
+        let countdownInterval = setInterval(countdown, 1000);
+        countdown(); 
+    }
 });
