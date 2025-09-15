@@ -823,14 +823,16 @@ main {
     
 }
 
-.navegation-filters button {
+.btn-filter {
     background: transparent;
     border: none;
     margin: 0 20px;
+    transition: border-bottom 0.3s;
 }
 
-.btn-filter {
-    
+.btn-filter:hover {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary); 
 }
 
 .btn-products {
